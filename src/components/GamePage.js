@@ -40,7 +40,6 @@ class Gamepage extends React.Component {
       document.getElementById(`${array[i]}`).innerText = "";
     }
     this.setState({
-      active: "player1",
       boxes: {
         box1: "",
         box2: "",
