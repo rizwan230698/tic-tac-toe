@@ -1,0 +1,70 @@
+.game-page {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+.player {
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+span {
+  padding: 5px 5px;
+}
+
+.active {
+  width: 10px;
+  height: 10px;
+  background-color: #cb202d;
+  border: 1px solid #cb202d;
+  border-radius: 50%;
+}
+.play-box {
+  margin-top: 30px;
+  width: 240px;
+  height: 240px;
+  margin-left: 30px;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border: 2px solid darkgrey;
+  border-collapse: collapse;
+}
+td {
+  cursor: pointer;
+  font-size: 28px;
+  text-align: center;
+  height: 33.33%;
+  width: 33.33%;
+  border: 2px solid darkgrey;
+}
+.winner,
+.game-over {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.winner-name,
+.game-over span {
+  background-color: #fff;
+  padding: 10px 25px;
+  font-size: 24px;
+}
+.winner button,
+.game-over button {
+  margin: 10px auto;
+}

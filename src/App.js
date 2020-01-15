@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GamePage from "./components/GamePage";
+import LandingPage from "./components/LandingPage.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+class TicTacToe extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: "landingPage",
+      player1: "",
+      player2: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      display: "gamePage"
+    });
+  }
+
+  render() {
+    const { display, player1, player2 } = this.state;
+    return (
+      <div className="tic-tac-toe">
+        <h1>Tic Tac Toe</h1>
+        {display === "landingPage" ? (
+          <LandingPage
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        ) : (
+          <GamePage
+            player1={player1.toUpperCase()}
+            player2={player2.toUpperCase()}
+          />
+        )}
+      </div>
+    );
+  }
 }
 
-export default App;
+export default TicTacToe;
