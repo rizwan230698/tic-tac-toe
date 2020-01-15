@@ -1,7 +1,6 @@
 .game-page {
   display: flex;
   flex-direction: column;
-  margin: 10px auto;
   justify-content: flex-start;
   align-items: center;
 }
@@ -29,7 +28,8 @@ span {
   margin-top: 30px;
   width: 240px;
   height: 240px;
-  margin-left: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 table {
@@ -52,7 +52,7 @@ td {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.9;
   display: flex;
   flex-direction: column;
   justify-content: center;
