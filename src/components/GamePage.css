@@ -67,4 +67,5 @@ td {
 .winner button,
 .game-over button {
   margin: 10px auto;
+  cursor: pointer;
 }

@@ -21,6 +21,40 @@ class Gamepage extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.checkWinner = this.checkWinner.bind(this);
+    this.resetGame = this.resetGame.bind(this);
+  }
+
+  resetGame() {
+    const array = [
+      "box1",
+      "box2",
+      "box3",
+      "box4",
+      "box5",
+      "box6",
+      "box7",
+      "box8",
+      "box9"
+    ];
+    for (let i = 0; i < array.length; i++) {
+      document.getElementById(`${array[i]}`).innerText = "";
+    }
+    this.setState({
+      active: "player1",
+      boxes: {
+        box1: "",
+        box2: "",
+        box3: "",
+        box4: "",
+        box5: "",
+        box6: "",
+        box7: "",
+        box8: "",
+        box9: ""
+      },
+      winner: false,
+      gameover: false
+    });
   }
 
   checkWinner() {
@@ -87,13 +121,15 @@ class Gamepage extends React.Component {
     const gameoverDisplay = gameover ? (
       <div className="game-over">
         <span>Game Over</span>
-        <button onClick={() => window.location.reload()}>Restart</button>
+        <button onClick={this.resetGame}>Try Again</button>
+        <button onClick={() => window.location.reload()}>Restart Game</button>
       </div>
     ) : null;
     const winnerDisplay = winner ? (
       <div className="winner">
         <span className="winner-name">{name}-wins!</span>
-        <button onClick={() => window.location.reload()}>Restart</button>
+        <button onClick={this.resetGame}>Try Again</button>
+        <button onClick={() => window.location.reload()}>Restart Game</button>
       </div>
     ) : null;
     return (
