@@ -20,11 +20,13 @@ class TicTacToe extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.setState({
-      display: "gamePage"
-    });
+  handleSubmit() {
+    const { player1, player2 } = this.state;
+    if (player1 !== "" && player2 !== "") {
+      this.setState({
+        display: "gamePage"
+      });
+    }
   }
 
   render() {
